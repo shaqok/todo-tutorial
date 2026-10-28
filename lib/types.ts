@@ -53,6 +53,8 @@ export interface CategoryMeta {
   label: string;
   /** 목록 뱃지에 적용할 Tailwind 색상 클래스 */
   badgeClass: string;
+  /** 필터 옵션 앞 색상 점에 적용할 Tailwind 배경 클래스 */
+  dotClass: string;
 }
 
 // 카테고리 목록. 선택 UI와 뱃지, 필터가 공유한다.
@@ -62,18 +64,21 @@ export const CATEGORIES: CategoryMeta[] = [
     label: "업무",
     badgeClass:
       "border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400",
+    dotClass: "bg-blue-500",
   },
   {
     value: "personal",
     label: "개인",
     badgeClass:
       "border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+    dotClass: "bg-emerald-500",
   },
   {
     value: "shopping",
     label: "쇼핑",
     badgeClass:
       "border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400",
+    dotClass: "bg-violet-500",
   },
 ];
 

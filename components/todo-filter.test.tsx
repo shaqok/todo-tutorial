@@ -17,12 +17,12 @@ describe("TodoFilter", () => {
     const completed = screen.getByRole("radio", { name: "완료" });
     const all = screen.getByRole("radio", { name: "전체" });
 
-    // 선택된 버튼은 checked + active(default) 스타일
+    // 선택된 버튼은 checked 상태로 강조된다
     expect(completed).toBeChecked();
-    expect(completed).toHaveAttribute("data-variant", "default");
-    // 선택되지 않은 버튼은 unchecked + outline 스타일
+    expect(completed).toHaveAttribute("data-state", "checked");
+    // 선택되지 않은 버튼은 unchecked 상태
     expect(all).not.toBeChecked();
-    expect(all).toHaveAttribute("data-variant", "outline");
+    expect(all).toHaveAttribute("data-state", "unchecked");
   });
 
   it("필터를 클릭하면 해당 값으로 onChange를 호출한다", async () => {

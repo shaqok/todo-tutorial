@@ -41,12 +41,17 @@ export function TodoList() {
 
       <TodoSearch value={query} onChange={setQuery} />
 
-      <div className="flex flex-wrap items-center justify-between gap-2">
+      <div className="grid grid-cols-[auto_1fr] items-center justify-items-start gap-x-3 gap-y-2 rounded-lg border p-3">
+        <span className="text-xs text-muted-foreground">상태</span>
         <TodoFilter value={filter} onChange={setFilter} />
+        <span className="text-xs text-muted-foreground">카테고리</span>
+        <TodoCategoryFilter
+          value={categoryFilter}
+          onChange={setCategoryFilter}
+        />
+        <span className="text-xs text-muted-foreground">정렬</span>
         <TodoSort value={sortBy} onChange={setSortBy} />
       </div>
-
-      <TodoCategoryFilter value={categoryFilter} onChange={setCategoryFilter} />
 
       {loaded && visibleTodos.length === 0 ? (
         <p className="py-6 text-center text-sm text-muted-foreground">
